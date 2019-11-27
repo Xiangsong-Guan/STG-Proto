@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/scn/test_scn.gd" type="Script" id=1]
+[ext_resource path="res://TestGUI.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var ScnArena: Arena
+
+
+func _enter_tree() -> void:
+	ScnArena = get_parent().ScnArena
+
+
+func _draw():
+	draw_rect(Rect2(0, 0, ScnArena.l, ScnArena.total_size.y), Color.olive, 1)
+	draw_rect(Rect2(ScnArena.r, 0, ScnArena.total_size.x - ScnArena.r, ScnArena.total_size.y), Color.olive, 1)
+	draw_line(ScnArena.transform_to_global(0,0), ScnArena.transform_to_global(0, ScnArena.h), Color.lavender, 1)
+	draw_line(ScnArena.transform_to_global(ScnArena.w, 0), ScnArena.transform_to_global(ScnArena.w, ScnArena.h), Color.lavender, 1)
+"
+
+[node name="TestScn" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="OutsideBG" type="Node2D" parent="."]
+z_index = 3
+script = SubResource( 1 )
+
+[node name="GUILayer" type="Node2D" parent="."]
+z_index = 5
+
+[node name="GUI" parent="GUILayer" instance=ExtResource( 2 )]
+[connection signal="dead" from="." to="GUILayer/GUI" method="_on_dead"]

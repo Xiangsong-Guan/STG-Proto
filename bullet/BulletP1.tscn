@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/bullet/bullet_abs.gd" type="Script" id=1]
+[ext_resource path="res://art/bullet/test_bullet.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.333333, 0.333333, 0.00392157 ) ]
+}
+
+[node name="BulletP1" type="KinematicBody2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0852585, 0.596804 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -0.0214679, 3.07989 )
+scale = Vector2( 0.922321, 0.923599 )
+polygon = PoolVector2Array( 0.086941, -9.6925, 7.2355, -3.29231, 7.17388, 3.72328, 0.086941, -3.60001, -6.69187, 3.2925, -6.63024, -3.41539 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ash = SubResource( 1 )
+anims/hit = SubResource( 2 )

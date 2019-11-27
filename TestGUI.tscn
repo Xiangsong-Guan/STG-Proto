@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/test_gui.gd" type="Script" id=1]
+
+[node name="GUI" type="Control"]
+pause_mode = 2
+margin_left = 0.639542
+margin_right = 176.64
+margin_bottom = 38.0
+script = ExtResource( 1 )
+
+[node name="Dead" type="Label" parent="."]
+visible = false
+margin_left = 384.0
+margin_top = 256.0
+margin_right = 576.0
+margin_bottom = 320.0
+text = "Died! Press ESC to quit.
+
+Or double press Space to try again!"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 25.9294
+margin_top = 23.3656
+margin_right = 217.929
+margin_bottom = 139.366
+text = "STG TEST 19.11.12.15
+
+Shift switch status
+'Z' to shoot
+Arrow Key to move
+ECS to quit
+Space to pause"
+
+[node name="FPS" type="Label" parent="."]
+margin_left = 26.6322
+margin_top = 168.327
+margin_right = 52.6322
+margin_bottom = 182.327
+text = "FPS:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N" type="Label" parent="FPS"]
+margin_left = 29.7588
+margin_top = -1.23389
+margin_right = 69.7588
+margin_bottom = 12.7661
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BN" type="Label" parent="."]
+margin_left = 26.1452
+margin_top = 183.932
+margin_right = 124.145
+margin_bottom = 197.932
+text = "Bullet Number:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N" type="Label" parent="BN"]
+margin_left = 103.158
+margin_top = 0.630249
+margin_right = 143.158
+margin_bottom = 14.6302
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Label" parent="."]
+visible = false
+margin_left = 408.031
+margin_top = 17.2677
+margin_right = 458.031
+margin_bottom = 31.2677
+text = "Paused!"
+
+[node name="BossHP" type="Label" parent="."]
+margin_left = 26.7033
+margin_top = 224.601
+margin_right = 83.7033
+margin_bottom = 238.601
+text = "Boss HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N" type="Label" parent="BossHP"]
+margin_left = 61.3964
+margin_right = 101.396
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
