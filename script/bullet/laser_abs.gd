@@ -13,15 +13,23 @@ var power: int = 1
 
 onready var head: Sprite = $HeadSprite
 onready var laser: Sprite = $LaserSprite
+onready var tail: Sprite = $TailSprite
 
 
 func _init() -> void:
-	visible = true
+	visible = false
+	
+	
+func _ready() -> void:
+	laser.visible = false
+	head.visible = false
+	tail.visible = false
 
 
 func fire(h_pos: Vector2) -> void:
 	shift2(h_pos)
-	visible = true
+	laser.visible = true
+	head.visible = true
 	
 	
 func shift2(h_pos: Vector2) -> void:
@@ -31,8 +39,18 @@ func shift2(h_pos: Vector2) -> void:
 	
 	
 func cease() -> void:
-	visible = false
+	laser.visible = false
+	head.visible = false
 	
+	
+func standby() -> void:
+	visible = true
+	tail.visible = true
+	
+	
+func unstandby() -> void:
+	tail.visible = false
+	visible = false
 
 
 

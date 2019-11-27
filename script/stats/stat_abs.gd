@@ -14,11 +14,13 @@ func armed(mstr: CharABS) -> void:
 
 
 func disable() -> void:
-	pass
+	for sc in scs:
+		sc.unformation()
 	
 	
 func enable() -> void:
-	pass
+	for sc in scs:
+		sc.formation()
 	
 	
 func shoot() -> void:

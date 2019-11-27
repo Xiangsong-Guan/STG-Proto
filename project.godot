@@ -139,7 +139,3 @@ stg_savelife={
 2d_physics/layer_7="EBullet"
 2d_physics/layer_8="Laser"
 2d_physics/layer_16="Shell"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

@@ -17,11 +17,12 @@ func _init() -> void:
 func enable() -> void:
 	cache_spd = Master.speed
 	Master.speed = LOW_SPD
+	.enable()
 	
 	
 func disable() -> void:
 	Master.speed = cache_spd
-	
+	.disable()
 	
 	
 	

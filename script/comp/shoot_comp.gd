@@ -107,6 +107,16 @@ func cease() -> void:
 	ShootingInterval.stop()
 	
 	
+func formation() -> void:
+	pass
+	# show the fire point
+	
+	
+func unformation() -> void:
+	pass
+	# unshow the fire point
+	
+	
 func ash() -> void:
 	cease()
 	for i in range(0, bullet_pool_size):

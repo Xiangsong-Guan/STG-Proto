@@ -24,9 +24,10 @@ var shooting: bool = false
 func armed(s1: StatABS, s2: StatABS) -> void:
 	stats.append(s1)
 	stats.append(s2)
-	stata = stats[stati]
 	s1.armed(self)
 	s2.armed(self)
+	stata = stats[stati]
+	stata.enable()
 
 
 func _enter_tree() -> void:

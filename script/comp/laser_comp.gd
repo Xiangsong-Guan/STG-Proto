@@ -84,6 +84,14 @@ func cease() -> void:
 	Laser.cease()
 	
 	
+func formation() -> void:
+	Laser.standby()
+	
+	
+func unformation() -> void:
+	Laser.unstandby()
+	
+	
 func ash() -> void:
 	cease()
 
