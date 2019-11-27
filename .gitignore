@@ -1,0 +1,7 @@
+# ignore import
+.import/
+*.import
+
+# export
+export.cfg
+export_presets.cfg
